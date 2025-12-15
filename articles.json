@@ -4,5 +4,30 @@
     "publisher": "IJBMRS",
     "issn": ""
   },
-  "articles": []
+  "articles": [
+    {
+      "slug": "article-01",
+      "title": "Event Management and Leadership through Youth-led Initiatives: A Case Study of TEDxThaltej Youth Creators",
+      "authors": [
+        {
+          "name": "Mr. Fenil Pritesh Shah",
+          "affiliation": ""
+        }
+      ],
+      "editors": [],
+      "publication_date": "2025-12-01",
+      "page_range": "1-14",
+      "doi": "",
+      "is_online": false,
+      "journal": {
+        "name": "International Journal of Business and Management Research Studies",
+        "volume": "01",
+        "issue": "01"
+      },
+      "database": "IJBMRS Index",
+      "annotation": "",
+      "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-01.pdf",
+      "url": "/articles/volume-01/issue-01/article-01.html"
+    }
+  ]
 }
