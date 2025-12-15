@@ -143,3 +143,4 @@ jobs:
           git add articles.json articles sitemap.xml
           git commit -m "Add article from issue"
           git push
+          
