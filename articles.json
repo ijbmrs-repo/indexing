@@ -53,29 +53,5 @@
       "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-02.pdf",
       "url": "/articles/volume-01/issue-01/article-02.html"
     },
-    {
-      "slug": "article-03",
-      "title": "Managing Without Manuals: Understanding Decision-Making in Fluid and Unstructured Teams",
-      "authors": [
-        {
-          "name": "Ms. Khushali Patel",
-          "affiliation": "Indus University"
-        }
-      ],
-      "editors": [],
-      "publication_date": "2025-12-01",
-      "page_range": "15-20",
-      "doi": "",
-      "is_online": false,
-      "journal": {
-        "name": "International Journal of Business & Management Research Studies",
-        "volume": "01",
-        "issue": "01"
-      },
-      "database": "IJBMRS Index",
-      "annotation": "",
-      "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-02.pdf",
-      "url": "/articles/volume-01/issue-01/article-03.html"
-    }
   ]
 }
