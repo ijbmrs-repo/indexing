@@ -4,34 +4,5 @@
     "publisher": "IJBMRS",
     "issn": ""
   },
-  "articles": [
-    {
-      "slug": "article-01",
-      "title": "Comparative Analysis of RERA and Consumer Protection Laws",
-      "authors": [
-        {
-          "name": "Abhijit Vanraj Vanjara",
-          "affiliation": "JG University"
-        },
-        {
-          "name": "Dr. Hetal Parikh",
-          "affiliation": "JG University"
-        }
-      ],
-      "editors": [],
-      "publication_date": "2025-12-15",
-      "page_range": "152-172",
-      "doi": "",
-      "is_online": false,
-      "journal": {
-        "name": "International Journal of Business & Management Research Studies",
-        "volume": "01",
-        "issue": "01"
-      },
-      "database": "IJBMRS Index",
-      "annotation": "",
-      "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-11.pdf",
-      "url": "/articles/volume-01/issue-01/article-01.html"
-    }
-  ]
+  "articles": []
 }
