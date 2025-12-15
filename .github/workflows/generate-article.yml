@@ -1,0 +1,145 @@
+name: Generate Article
+
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate article files
+        run: |
+          python << 'EOF'
+          import json, re
+          from pathlib import Path
+          from xml.etree.ElementTree import Element, SubElement, ElementTree
+
+          BASE_URL = "https://indexing.ijbmrs.org"
+
+          body = """${{ github.event.issue.body }}"""
+
+          def field(label):
+              m = re.search(rf"{label}\n+(.+?)(?:\n\n|\Z)", body, re.S)
+              return m.group(1).strip() if m else ""
+
+          title = field("Title of Article")
+          authors_raw = field("Article Authors")
+          editors_raw = field("Editor(s)")
+          pub_date = field("Date Published")
+          page_range = field("Page Range")
+          doi = field("DOI")
+          is_online = field("Article is online?")
+          journal_name = field("Journal Name")
+          volume = field("Volume Number")
+          issue = field("Issue Number")
+          annotation = field("Annotation")
+          pdf = field("PDF URL")
+
+          authors = []
+          for line in authors_raw.splitlines():
+              if "|" in line:
+                  name, aff = line.split("|", 1)
+                  authors.append({"name": name.strip(), "affiliation": aff.strip()})
+              else:
+                  authors.append({"name": line.strip(), "affiliation": ""})
+
+          editors = [{"name": e.strip()} for e in editors_raw.splitlines() if e.strip()]
+
+          data_file = Path("articles.json")
+          data = json.loads(data_file.read_text())
+
+          slug = f"article-{len(data['articles']) + 1:02d}"
+          year = pub_date.split("-")[0]
+
+          url = f"/articles/volume-{volume}/issue-{issue}/{slug}.html"
+
+          article = {
+              "slug": slug,
+              "title": title,
+              "authors": authors,
+              "editors": editors,
+              "publication_date": pub_date,
+              "page_range": page_range,
+              "doi": doi,
+              "is_online": is_online.lower().startswith("yes"),
+              "journal": {
+                  "name": journal_name,
+                  "volume": volume,
+                  "issue": issue
+              },
+              "database": "IJBMRS Index",
+              "annotation": annotation,
+              "pdf": pdf,
+              "url": url
+          }
+
+          data["articles"].append(article)
+          data_file.write_text(json.dumps(data, indent=2))
+
+          out_dir = Path(f"articles/volume-{volume}/issue-{issue}")
+          out_dir.mkdir(parents=True, exist_ok=True)
+
+          meta_authors = "\n".join(
+              f'<meta name="citation_author" content="{a["name"]}">' for a in authors
+          )
+
+          html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <title>{title}</title>
+            <meta name="citation_title" content="{title}">
+            {meta_authors}
+            <meta name="citation_journal_title" content="{journal_name}">
+            <meta name="citation_volume" content="{volume}">
+            <meta name="citation_issue" content="{issue}">
+            <meta name="citation_publication_date" content="{pub_date}">
+            <meta name="citation_doi" content="{doi}">
+            <meta name="citation_pdf_url" content="{pdf}">
+          </head>
+          <body>
+            <h1>{title}</h1>
+            <p><strong>Authors:</strong> {", ".join(a["name"] for a in authors)}</p>
+            <p><strong>Journal:</strong> {journal_name}</p>
+            <p><strong>Volume:</strong> {volume} | <strong>Issue:</strong> {issue}</p>
+            <p><strong>Published:</strong> {pub_date}</p>
+            <p><strong>Pages:</strong> {page_range}</p>
+            <p><strong>DOI:</strong> {doi}</p>
+            <p>{annotation}</p>
+            <p><a href="{pdf}" target="_blank">⬇ Download PDF</a></p>
+          </body>
+          </html>"""
+
+          (out_dir / f"{slug}.html").write_text(html)
+
+          urlset = Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+          def add(loc):
+              u = SubElement(urlset, "url")
+              SubElement(u, "loc").text = loc
+
+          add(BASE_URL + "/")
+          for a in data["articles"]:
+              add(BASE_URL + a["url"])
+
+          ElementTree(urlset).write("sitemap.xml", encoding="utf-8", xml_declaration=True)
+          EOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "ijbmrs-bot"
+          git config user.email "bot@ijbmrs.org"
+          git add articles.json articles sitemap.xml
+          git commit -m "Add article from issue"
+          git push
