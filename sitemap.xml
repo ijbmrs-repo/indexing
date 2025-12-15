@@ -1,2 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://indexing.ijbmrs.org/</loc></url><url><loc>https://indexing.ijbmrs.org/articles/volume-01/issue-01/article-01.html</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://index.ijbmrs.org/</loc>
+  </url>
+
+</urlset>
