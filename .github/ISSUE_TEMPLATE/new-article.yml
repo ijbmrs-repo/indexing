@@ -1,0 +1,110 @@
+name: Add New Article
+description: Add a new article to the IJBMRS Index (metadata only)
+title: "[Article]: "
+
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title of Article
+      placeholder: "Title of the article"
+    validations:
+      required: true
+
+  - type: textarea
+    id: authors
+    attributes:
+      label: Article Authors
+      description: "One author per line. Format: Full Name | Affiliation (optional)"
+      placeholder: |
+        John Doe | University Name
+        Jane Smith | Institute Name
+    validations:
+      required: true
+
+  - type: textarea
+    id: editors
+    attributes:
+      label: Editor(s)
+      description: "Optional. One editor per line"
+      placeholder: |
+        Alice Brown
+    validations:
+      required: false
+
+  - type: input
+    id: publication_date
+    attributes:
+      label: Date Published
+      description: "Format: YYYY-MM-DD"
+      placeholder: "2025-12-15"
+    validations:
+      required: true
+
+  - type: input
+    id: page_range
+    attributes:
+      label: Page Range
+      placeholder: "1–12"
+    validations:
+      required: false
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI (Zenodo)
+      placeholder: "10.5281/zenodo.xxxxxxx"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: is_online
+    attributes:
+      label: Article is online?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: input
+    id: journal_name
+    attributes:
+      label: Journal Name
+      placeholder: "International Journal of Business and Management Research Studies"
+    validations:
+      required: true
+
+  - type: input
+    id: volume
+    attributes:
+      label: Volume Number
+      placeholder: "01"
+    validations:
+      required: true
+
+  - type: input
+    id: issue
+    attributes:
+      label: Issue Number
+      placeholder: "01"
+    validations:
+      required: true
+
+  - type: textarea
+    id: annotation
+    attributes:
+      label: Annotation / Abstract
+      description: "Optional abstract or annotation"
+      placeholder: "This study examines..."
+    validations:
+      required: false
+
+  - type: input
+    id: pdf_url
+    attributes:
+      label: PDF URL
+      description: "Must point to files.ijbmrs.org"
+      placeholder: "https://files.ijbmrs.org/volume-01/issue-01/article-01.pdf"
+    validations:
+      required: true
