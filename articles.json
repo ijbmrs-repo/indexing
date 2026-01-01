@@ -52,6 +52,30 @@
       "annotation": "",
       "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-02.pdf",
       "url": "/articles/volume-01/issue-01/article-02.html"
+    },
+    {
+      "slug": "article-03",
+      "title": "Bridging Innovation Frontiers: How Startups and Corporations Are Redefining the Future of Business",
+      "authors": [
+        {
+          "name": "Dr. Ivan Felipe Rossetti",
+          "affiliation": ""
+        }
+      ],
+      "editors": [],
+      "publication_date": "2025-12-05",
+      "page_range": "21-24",
+      "doi": "",
+      "is_online": false,
+      "journal": {
+        "name": "International Journal of Business & Management Research Studies",
+        "volume": "01",
+        "issue": "01"
+      },
+      "database": "IJBMRS Index",
+      "annotation": "",
+      "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-03.pdf",
+      "url": "/articles/volume-01/issue-01/article-03.html"
     }
   ]
 }
