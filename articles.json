@@ -76,6 +76,30 @@
       "annotation": "",
       "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-03.pdf",
       "url": "/articles/volume-01/issue-01/article-03.html"
+    },
+    {
+      "slug": "article-04",
+      "title": "An Empirical study on importance of Emotional Maturity among Teacher trainees",
+      "authors": [
+        {
+          "name": "Dr. Charmi Shah",
+          "affiliation": "GLS University"
+        }
+      ],
+      "editors": [],
+      "publication_date": "2025-12-15",
+      "page_range": "40-46",
+      "doi": "",
+      "is_online": false,
+      "journal": {
+        "name": "International Journal of Business & Management Research Studies",
+        "volume": "01",
+        "issue": "01"
+      },
+      "database": "IJBMRS Index",
+      "annotation": "",
+      "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-05.pdf",
+      "url": "/articles/volume-01/issue-01/article-04.html"
     }
   ]
 }
