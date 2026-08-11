@@ -100,6 +100,58 @@
       "annotation": "",
       "pdf": "https://files.ijbmrs.org/volume-01/issue-01/article-05.pdf",
       "url": "/articles/volume-01/issue-01/article-04.html"
+    },
+    {
+      "slug": "article-05",
+      "title": "Artificial Intelligence in Financial Analytics and Forecasting: An Empirical Study on Forecasting Accuracy, Decision-Making Efficiency, and Fraud Detection",
+      "authors": [
+        {
+          "name": "CA Dr. Devarsh Yogesh Gandhi",
+          "affiliation": ""
+        },
+        {
+          "name": "Assistant Professor, Faculty of Performing Arts",
+          "affiliation": ""
+        },
+        {
+          "name": "GLS University, Ahmedabad, Gujarat, India",
+          "affiliation": ""
+        },
+        {
+          "name": "(M) 9408639108, [Devarsh.gandhi@glsuniversity.ac.in](mailto:Devarsh.gandhi@glsuniversity.ac.in)",
+          "affiliation": ""
+        },
+        {
+          "name": "Dr. Charmi Shah",
+          "affiliation": ""
+        },
+        {
+          "name": "Assistant Professor, Faculty of Performing Arts",
+          "affiliation": ""
+        },
+        {
+          "name": "GLS University, Ahmedabad, Gujarat, India",
+          "affiliation": ""
+        },
+        {
+          "name": "(M) 83062 50865, [charmi.shah_fopa@glsuniversity.ac.in](mailto:charmi.shah_fopa@glsuniversity.ac.in)",
+          "affiliation": ""
+        }
+      ],
+      "editors": [],
+      "publication_date": "2026-08-11",
+      "page_range": "1-16",
+      "doi": "",
+      "is_online": false,
+      "journal": {
+        "name": "International Journal of Business and Management Research Studies",
+        "volume": "02",
+        "issue": "04"
+      },
+      "database": "IJBMRS Index",
+      "annotation": "",
+      "pdf": "https://files.ijbmrs.org/volume-02/issue-04/article-01.pdf",
+      "url": "/articles/volume-02/issue-04/article-05.html"
     }
   ]
 }
